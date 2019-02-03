@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <md-card>
+        <md-card id="card-home">
             <form @submit.prevent="sendData" id="main-form">
                 <md-input-container class="form-control">
                     <label>Name</label>
@@ -23,7 +23,9 @@
                     <md-radio v-model="gender" id="male" md-value="male" class="md-primary">Male</md-radio>
                     <md-radio v-model="gender" id="female" md-value="female" class="md-primary">Female</md-radio>
                 </div>
-                <md-button type="summit" class="md-raised md-primary" id="send">Send</md-button>
+                <div class="send-wrapper">
+                    <md-button type="summit" class="md-raised md-primary" id="send">Send</md-button>
+                </div>
             </form>
         </md-card>
     </div>
@@ -79,8 +81,15 @@
         color: rgba(0, 0, 0, 0.6);
     }
 
+    .send-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     #send {
-        margin: 5px auto;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 
     #main-form {
@@ -90,6 +99,29 @@
     .home {
         width: 30%;
         min-width: 250px;
-        margin: 30px auto;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: -100%;
+        transform: translate(-50%);
+        animation-name: home;
+        animation-duration: .5s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes home {
+        from {
+            opacity: 0;
+            top: -100%;
+        }
+        to {
+            opacity: 1;
+            top: 16%;
+        }
+    }
+
+    #card-home{
+        background-color: rgba(255, 255, 255, 0.6);
     }
 </style>
