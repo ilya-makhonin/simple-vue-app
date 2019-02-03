@@ -31,14 +31,14 @@ router.post('/', async (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: 'iljamahonin97@mail.ru',
-            pass: 'noizemc1997god$'
+            user: 'mail',
+            pass: 'pass'
         }
     });
 
     let mailOptions = {
-        from: '"nice-course" iljamahonin97@mail.ru',
-        to: 'iliamakhonin97@mail.ru',
+        from: '"nice-course" mail',
+        to: 'to',
         subject: `nice-course | New message`,
         text: req.body.name,
         html: output
