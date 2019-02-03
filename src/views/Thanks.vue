@@ -1,16 +1,18 @@
 <template>
   <div class="thanks">
-      <md-card>
+      <md-card id="card-thanks">
           <md-card-media>
-              <img src="../assets/logo.png" alt="Vue-Logo" class="logo-redirect">
+              <img src="../assets/s2.jpg" alt="Vue-Logo" class="logo-redirect">
           </md-card-media>
           <md-card-content>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea nostrum.
+              <p class="thanks-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea nostrum.
+              </p>
           </md-card-content>
           <md-card-actions>
-              <md-button class="md-primary">
-                  <router-link to="/">Home</router-link>
-              </md-button>
+              <router-link to="/">
+                  <md-button class="md-raised md-primary">Home</md-button>
+              </router-link>
           </md-card-actions>
       </md-card>
   </div>
@@ -18,8 +20,36 @@
 
 <style>
     .thanks {
-        width: 25%;
+        width: 35%;
         min-width: 200px;
-        margin: 30px auto;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        transform: translate(-50%);
+        animation-name: thanks;
+        animation-duration: .5s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes thanks {
+        from {
+            opacity: 0;
+            top: -50%;
+        }
+        to {
+            opacity: 1;
+            top: 16%;
+        }
+    }
+
+    .thanks-content {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #card-thanks {
+        background: rgba(255, 255, 255, 0.6);
     }
 </style>
