@@ -20,6 +20,6 @@
     .thanks {
         width: 25%;
         min-width: 200px;
-        margin: 10px auto;
+        margin: 30px auto;
     }
 </style>
