@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
         text: req.body.name,
         html: output
     };
-
+    /*
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-
+    */
     res.json({state: 'success'});
 });
 
