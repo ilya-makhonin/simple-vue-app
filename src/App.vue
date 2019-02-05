@@ -17,6 +17,7 @@
     </div>
 </template>
 
+
 <style>
     #app {
         background: url("./assets/black-background_00313351.jpg");
