@@ -6,7 +6,7 @@
           </md-card-media>
           <md-card-content>
               <p class="thanks-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea nostrum.
+                  Your data has been successfully entered into the database!
               </p>
           </md-card-content>
           <md-card-actions>
@@ -17,6 +17,7 @@
       </md-card>
   </div>
 </template>
+
 
 <style>
     .thanks {
