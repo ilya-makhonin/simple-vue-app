@@ -34,14 +34,8 @@
 
 <script>
     import axios from 'axios';
-    import MdCard from "../../node_modules/vue-material/src/components/mdCard/mdCard.vue";
-    import MdCardActions from "../../node_modules/vue-material/src/components/mdCard/mdCardActions.vue";
-
 
     export default {
-        components: {
-            MdCardActions,
-            MdCard},
         name: 'home',
         data: function () {
             return {
