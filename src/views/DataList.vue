@@ -2,6 +2,7 @@
     <div class="data-list">
         <div class="button-get-data">
             <md-button class="md-raised md-primary" @click="getDataList">Get Data</md-button>
+            <md-button class="md-raised md-primary" @click="updateDataList">Update Data</md-button>
             <router-link to="/">
                 <md-button class="md-raised md-primary">Home</md-button>
             </router-link>
@@ -52,6 +53,16 @@
       },
       methods: {
          async getDataList() {
+          try {
+            let response = await axios.get('http://localhost:3000/api/records');
+            this.dataList = response.data;
+          } catch (error) {
+            this.isError = true;
+          }
+        },
+
+        async updateDataList() {
+          this.dataList.length = 0;
           try {
             let response = await axios.get('http://localhost:3000/api/records');
             this.dataList = response.data;
