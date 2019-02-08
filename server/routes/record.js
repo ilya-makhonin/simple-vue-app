@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
+const mailData = require('./../config');
 
 const Record = require('../models/Record');
 
@@ -31,19 +32,19 @@ router.post('/', async (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: 'mail',
-            pass: 'pass'
+            user: mailData.mailLogin,
+            pass: mailData.mailPass
         }
     });
 
     let mailOptions = {
-        from: '"nice-course" mail',
-        to: 'to',
+        from: mailData.mailSource,
+        to: mailData.mailTarget,
         subject: `nice-course | New message`,
         text: req.body.name,
         html: output
     };
-    /*
+
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
@@ -51,7 +52,7 @@ router.post('/', async (req, res) => {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-    */
+
     res.json({state: 'success'});
 });
 
