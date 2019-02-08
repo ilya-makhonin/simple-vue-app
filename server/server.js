@@ -2,12 +2,13 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path');
+const connection = require('./config').connection;
 
 let app = express();
 
 app.set('port', 3000);
 
-mongoose.connect('mongodb://admin:admin12@ds016148.mlab.com:16148/sort-bot-articles', { useNewUrlParser: true })
+mongoose.connect(connection, { useNewUrlParser: true })
     .then(db => console.log('[OK] DB is connected'))
     .catch(err => console.error(err));
 
