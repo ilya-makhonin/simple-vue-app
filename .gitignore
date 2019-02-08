@@ -21,3 +21,5 @@ yarn-error.log*
 *.sw*
 
 command_list.md
+
+/server/config.js
