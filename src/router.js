@@ -25,3 +25,43 @@ export default new Router({
     }
   ]
 })
+
+/*
+Step 1
+import Thanks from './views/Thanks.vue'
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/thanks',
+      name: 'thanks',
+      component: Thanks
+    }
+  ]
+})
+Step 2
+import DataList from './views/DataList.vue'
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/thanks',
+      name: 'thanks',
+      component: Thanks
+    },
+    {
+      path: '/data',
+      name: 'data',
+      component: DataList
+    }
+  ]
+})
+ */
