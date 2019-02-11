@@ -16,11 +16,4 @@ new Vue({
 // TODO: Add pages for deleting and updating data in DB
 // TODO: A component for deleting will call "ClearDBCollections"
 // TODO: A component for updating will call "UpdateDBData"
-
-/*
-Step 3
-import VueMaterial from 'vue-material';
-import 'vue-material/dist/vue-material.css'
-Vue.config.productionTip = false;
-Vue.use(VueMaterial);
- */
+// TODO: Add component for getting data of a user by id (need to add id in DB)
