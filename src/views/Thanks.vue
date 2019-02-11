@@ -54,12 +54,3 @@
         background: rgba(255, 255, 255, 0.6);
     }
 </style>
-
-<!--
-Step 1
-<template>
-    <div class="thanks">
-       <h1>Thank you for your record!</h1>
-    </div>
-</template>
--->
