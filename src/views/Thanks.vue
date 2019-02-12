@@ -2,7 +2,7 @@
   <div class="thanks">
       <md-card id="card-thanks">
           <md-card-media>
-              <img src="../assets/s2.jpg" alt="Vue-Logo" class="logo-redirect">
+              <img src="../assets/thanks_pic.jpg" alt="Vue-Logo" class="logo-redirect">
           </md-card-media>
           <md-card-content>
               <p class="thanks-content">

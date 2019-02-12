@@ -19,7 +19,7 @@
 
 <style>
     #app {
-        background: url("./assets/black-background_00313351.jpg");
+        background: url("assets/black-background.jpg");
         height: 100vh;
     }
 
