@@ -40,10 +40,8 @@
 
 <script>
     import axios from 'axios';
-    import MdCardContent from "../../node_modules/vue-material/src/components/mdCard/mdCardContent.vue";
 
     export default {
-      components: {MdCardContent},
       name: 'data',
       data: function () {
         return {
