@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
-const mailData = require('./../config');
+const mailing = require('./send_mail');
 
 const Record = require('../models/Record');
 
@@ -10,49 +9,18 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    res.json(await Record.findById(req.params.id));
+    res.json(await Record.findOne({ index: req.params.id }));
 });
 
 router.post('/', async (req, res) => {
-    const record = new Record(req.body);
+    let index = await Record.find();
+    index = index[index.length - 1].index + 1 || 1;
+    let data = {...req.body, index };
+    const record = new Record(data);
     await record.save();
-
-    const output = `
-    <p>You have a new message from nice-app:</p>
-    <ul>
-        <li>name: ${req.body.name}</li>
-        <li>email: ${req.body.email}</li>
-        <li>address: ${req.body.address}</li>
-        <li>gender: ${req.body.gender}</li>
-    </ul>
-    `;
-
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: mailData.mailLogin,
-            pass: mailData.mailPass
-        }
-    });
-
-    let mailOptions = {
-        from: mailData.mailSource,
-        to: mailData.mailTarget,
-        subject: `nice-course | New message`,
-        text: req.body.name,
-        html: output
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    });
-
+    if (require('../config').mailTarget.length !== 0) {
+      mailing(req);
+    }
     res.json({state: 'success'});
 });
 
