@@ -5,8 +5,7 @@ const Record = new Schema({
     name: String,
     email: String,
     address: String,
-    gender: String,
-    index: Number
+    gender: String
 });
 
 module.exports = mongoose.model('Record', Record);

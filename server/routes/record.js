@@ -9,14 +9,11 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    res.json(await Record.findOne({ index: req.params.id }));
+    res.json(await Record.findById(req.params.id));
 });
 
 router.post('/', async (req, res) => {
-    let index = await Record.find();
-    index = index[index.length - 1].index + 1 || 1;
-    let data = {...req.body, index };
-    const record = new Record(data);
+    const record = new Record(req.body);
     await record.save();
     if (require('../config').mailTarget.length !== 0) {
       mailing(req);
