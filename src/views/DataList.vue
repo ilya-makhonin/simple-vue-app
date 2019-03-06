@@ -71,11 +71,7 @@
           } catch (error) {
             this.isError = true;
           }
-        },
-
-          moreInfo() {
-
-          }
+        }
       }
     }
 </script>
