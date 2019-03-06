@@ -6,7 +6,7 @@ const connection = require('./config').connection;
 
 let app = express();
 
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 
 mongoose.connect(connection, { useNewUrlParser: true })
     .then(db => console.log('[OK] DB is connected'))
