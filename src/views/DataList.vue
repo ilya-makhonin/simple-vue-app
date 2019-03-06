@@ -15,6 +15,7 @@
                         <md-table-head md-numeric>Email</md-table-head>
                         <md-table-head md-numeric>Address</md-table-head>
                         <md-table-head md-numeric>Gender</md-table-head>
+                        <md-table-head md-numeric>More info</md-table-head>
                     </md-table-row>
                 </md-table-header>
                 <md-table-body>
@@ -23,6 +24,9 @@
                         <md-table-cell md-numeric>{{ dataUser.email }}</md-table-cell>
                         <md-table-cell md-numeric>{{ dataUser.address }}</md-table-cell>
                         <md-table-cell md-numeric>{{ dataUser.gender }}</md-table-cell>
+                        <md-table-cell md-numeric>
+                            <router-link to="/user/{{ dataUser._id }}">More info here</router-link>
+                        </md-table-cell>
                     </md-table-row>
                 </md-table-body>
             </md-table>
@@ -67,7 +71,11 @@
           } catch (error) {
             this.isError = true;
           }
-        }
+        },
+
+          moreInfo() {
+
+          }
       }
     }
 </script>
