@@ -12,3 +12,7 @@ Technologies stack:
 + Express.js
 
 The project was created using Vue-cli
+
+### TODO 
+- [ ] Create component for deleting a user by id
+- [ ] Create component for updating data of a user by id
