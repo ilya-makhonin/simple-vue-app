@@ -1,8 +1,7 @@
 <template>
     <div class="data-list">
         <div class="button-get-data">
-            <md-button class="md-raised md-primary" @click="getDataList">Get Data</md-button>
-            <md-button class="md-raised md-primary" @click="updateDataList">Update Data</md-button>
+            <md-button class="md-raised md-primary" @click="getDataList">Update Data</md-button>
             <router-link to="/">
                 <md-button class="md-raised md-primary">Home</md-button>
             </router-link>
@@ -25,7 +24,7 @@
                         <md-table-cell md-numeric>{{ dataUser.address }}</md-table-cell>
                         <md-table-cell md-numeric>{{ dataUser.gender }}</md-table-cell>
                         <md-table-cell md-numeric>
-                            <router-link to="/user/{{ dataUser._id }}">More info here</router-link>
+                            <router-link :to="'/user/' + dataUser._id">More info here</router-link>
                         </md-table-cell>
                     </md-table-row>
                 </md-table-body>
@@ -48,6 +47,7 @@
     export default {
       name: 'data',
       data: function () {
+          this.getDataList();
         return {
           dataList: [],
           isError: false
@@ -55,16 +55,6 @@
       },
       methods: {
          async getDataList() {
-          try {
-            let response = await axios.get('http://localhost:3000/api/records');
-            this.dataList = response.data;
-          } catch (error) {
-            this.isError = true;
-          }
-        },
-
-        async updateDataList() {
-          this.dataList.length = 0;
           try {
             let response = await axios.get('http://localhost:3000/api/records');
             this.dataList = response.data;
@@ -95,6 +85,8 @@
 
     .error-block {
         width: 50%;
+        min-width: 300px;
+        margin: 50px auto;
     }
 
     .error-view {
