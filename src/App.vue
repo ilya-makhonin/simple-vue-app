@@ -6,7 +6,7 @@
             </div>
             <div class="to-data">
                 <router-link to="/data">
-                    <md-button class="md-raised md-primary">Go to data</md-button>
+                    <md-button class="md-raised md-primary">Go to users</md-button>
                 </router-link>
             </div>
         </header>

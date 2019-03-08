@@ -1,7 +1,7 @@
 <template>
     <div class="data-list">
         <div class="button-get-data">
-            <md-button class="md-raised md-primary" @click="getDataList">Update Data</md-button>
+            <md-button class="md-raised md-primary" @click="getDataList">Update Users List</md-button>
             <router-link to="/">
                 <md-button class="md-raised md-primary">Home</md-button>
             </router-link>
