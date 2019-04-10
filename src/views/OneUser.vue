@@ -79,7 +79,7 @@
                     this.address = response.data.address;
                     this.gender = response.data.gender;
                 } catch (error) {
-                    console.log('Shit!');
+                    throw new Error(error);
                 }
             },
             async deleteUserById() {
