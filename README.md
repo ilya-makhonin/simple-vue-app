@@ -11,8 +11,12 @@ Technologies stack:
 + CSS-in-JS library or material-design? 
 + Express.js
 
-The project was created using Vue-cli
+The project was creating with Vue-cli
 
-### TODO 
-- [ ] Create component for deleting a user by id
-- [ ] Create component for updating data of a user by id
+***
+
+For starting:
+> Create config.js file in server/ directory and add add needful variables
+> npm i - for downloading needful packages
+> npm run build - for compiling the app to dist/ folder
+> npm run run:server - for starting the server on 3000 port (localhost:3000)
